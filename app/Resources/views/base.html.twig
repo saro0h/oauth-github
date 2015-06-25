@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+            <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        <div class="container">
+            <div class="masthead">
+                <h3 class="text-muted">DPC Oauth application Exemple</h3>
+                <nav>
+                    <ul class="nav nav-justified">
+                        <li class="active"><a href="{{ path('homepage') }}"><i class="fa fa-home"></i> Home</a></li>
+                        <li><a href="{{ path('admin') }}"><i class="fa fa-tachometer"></i> Administration</a></li>
+                        <li><a href="{{ github_url_oauth }}{{ url('admin_auth') }}"><i class="fa fa-github"></i> Signin with Github</a></li>
+                        <li><a href="#"><i class="fa fa-sign-out"></i> Logout</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="jumbotron">
+                {% block body %}
+                    <h1>Marketing stuff!</h1>
+                    <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet.</p>
+                    <p><a class="btn btn-lg btn-success" href="#" role="button">Get started today</a></p>
+                {% endblock %}
+            </div>
+
+            <footer class="footer"><p>&copy; 2015</p></footer>
+        </div>
+
+        {% block javascripts %}
+        {% endblock %}
+    </body>
+</html>

@@ -1,0 +1,21 @@
+security:
+    providers:
+        github_user_provider:
+            id: github_user_provider
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt|error)|css|images|js)/
+            security: false
+
+        secured_area:
+            pattern: ^/admin
+            stateless: false
+            simple_preauth:
+                authenticator: github_authenticator
+            provider: github_user_provider
+            logout:
+                path:   /admin/logout
+                target: /
+
+        #main:
+        #    anonymous: ~

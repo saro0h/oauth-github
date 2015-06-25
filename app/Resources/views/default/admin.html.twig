@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Administration</h1>
+    <p class="lead">If you can access this page, it's because you are authenticated.</p>
+    <p class="lead">
+        Actually you are!
+        <br />
+        Your login: {{ app.user.username }}
+        <br />
+        Your name (in case you forgot…): {{ app.user.name }}
+        <br />
+        Aaaaand your email address: {{ app.user.email }}
+        <br />
+        Your FACE: <img src="{{ app.user.avatar }}"
+    </p>
+{% endblock %}
