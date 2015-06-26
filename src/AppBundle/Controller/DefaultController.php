@@ -28,7 +28,8 @@ class DefaultController extends Controller
      */
     public function adminAuthAction()
     {
-        return $this->render('default/admin.html.twig');
+        // To avoid the ?code= url. Can be done with Javascript.
+        return $this->redirectToRoute('admin');
     }
 
 

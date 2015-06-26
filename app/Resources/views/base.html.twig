@@ -18,9 +18,12 @@
                 <nav>
                     <ul class="nav nav-justified">
                         <li class="active"><a href="{{ path('homepage') }}"><i class="fa fa-home"></i> Home</a></li>
+                        {% if app.user %}
                         <li><a href="{{ path('admin') }}"><i class="fa fa-tachometer"></i> Administration</a></li>
+                        <li><a href="{{ path('logout') }}"><i class="fa fa-sign-out"></i> Logout</a></li>
+                        {% else %}
                         <li><a href="{{ github_url_oauth }}{{ url('admin_auth') }}"><i class="fa fa-github"></i> Signin with Github</a></li>
-                        <li><a href="#"><i class="fa fa-sign-out"></i> Logout</a></li>
+                        {% endif %}
                     </ul>
                 </nav>
             </div>
